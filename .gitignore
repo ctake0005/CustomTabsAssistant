@@ -28,7 +28,7 @@ proguard/
 
 # IntelliJ IDEA
 .idea/
-.iml
+*.iml
 captures
 
 # Mac

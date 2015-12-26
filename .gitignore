@@ -27,8 +27,8 @@ proguard/
 *.log
 
 # IntelliJ IDEA
-.idea/workspace.xml
-.idea/libraries
+.idea
+.iml
 captures
 
 # Mac

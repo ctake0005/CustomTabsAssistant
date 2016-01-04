@@ -28,8 +28,7 @@ import com.ctakesoft.ctassistant.Assistant;
 import com.ctakesoft.ctassistant.AssistantIntent;
 import com.ctakesoft.ctassistant.ConnectionCallback;
 
-public class CustomUIActivity extends AppCompatActivity implements View.OnClickListener,
-        ConnectionCallback {
+public class CustomUIActivity extends AppCompatActivity implements View.OnClickListener, ConnectionCallback {
     private static final String TAG = CustomUIActivity.class.getSimpleName();
 
     private EditText mUrlEditText;
@@ -37,7 +36,9 @@ public class CustomUIActivity extends AppCompatActivity implements View.OnClickL
     private CheckBox mShowActionButtonCheckbox;
     private CheckBox mAddMenusCheckbox;
     private CheckBox mShowTitleCheckBox;
+    private CheckBox mCustomAnimationCheckBox;
     private CheckBox mAutoHideAppBarCheckbox;
+    private CheckBox mChangeCloseButtonCheckbox;
 
     private Assistant mAssistant;
 
@@ -53,7 +54,9 @@ public class CustomUIActivity extends AppCompatActivity implements View.OnClickL
         mShowActionButtonCheckbox = (CheckBox) findViewById(R.id.custom_show_action_button);
         mAddMenusCheckbox = (CheckBox) findViewById(R.id.custom_add_menus);
         mShowTitleCheckBox = (CheckBox) findViewById(R.id.show_title);
+        mCustomAnimationCheckBox = (CheckBox) findViewById(R.id.custom_animation);
         mAutoHideAppBarCheckbox = (CheckBox) findViewById(R.id.auto_hide_checkbox);
+        mChangeCloseButtonCheckbox = (CheckBox) findViewById(R.id.custom_back_button_checkbox);
 
         mAssistant = new Assistant(this, null);
     }
@@ -100,7 +103,7 @@ public class CustomUIActivity extends AppCompatActivity implements View.OnClickL
         try {
             int color = Color.parseColor(mCustomTabColorEditText.getText().toString());
             builder.setToolbarColor(color);
-        } catch (IllegalArgumentException ex) {
+        } catch (IllegalArgumentException | StringIndexOutOfBoundsException e) {
             Log.i(TAG, "Unable to parse Color: " + mCustomTabColorEditText.getText());
         }
 
@@ -115,8 +118,17 @@ public class CustomUIActivity extends AppCompatActivity implements View.OnClickL
 
         builder.setShowTitle(mShowTitleCheckBox.isChecked());
 
+        if (mCustomAnimationCheckBox.isChecked()) {
+            builder.setStartAnimationsRightToLeft();
+            builder.setExitAnimationsLeftToRight();
+        }
+
         if (mAutoHideAppBarCheckbox.isChecked()) {
             builder.enableUrlBarHiding();
+        }
+
+        if (mChangeCloseButtonCheckbox.isChecked()) {
+            builder.setCloseButtonIconToArrowBack();
         }
 
         mAssistant.launch(builder.build(), url);

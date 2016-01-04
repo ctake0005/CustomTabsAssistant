@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2015 Google Inc. All Rights Reserved.
+<!-- Copyright 2015 ctakesoft.com<hal1000@ctakesoft.com>
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,24 +16,20 @@
 <resources>
     <string name="app_name">Custom Tabs Assistant Demos</string>
 
-    <string name="title_activity_webview">WebviewActivity</string>
+    <string name="title_activity_webview">WebViewActivity</string>
     <string name="label_url">URL:</string>
     <string name="default_test_url">http://developer.android.com</string>
-    <string name="back_to_app">Back to your application!</string>
-    <string name="label_start_custom_tab">Open Custom Tab</string>
-    <string name="label_add_menus">Add Menus</string>
-    <string name="label_add_action_button">Add Action Button</string>
     <string name="label_action_share">Share</string>
 
-    <string name="label_toobar_color">Toolbar Color:</string>
+    <string name="label_toolbar_color">Toolbar Color:</string>
     <string name="default_toolbar_color">#980e03</string>
     <string name="menu_item_title">Next Activity</string>
     <string name="label_may_launch_url">Pre Load</string>
+    <string name="label_start_custom_tab">Open Custom Tab</string>
 
     <!-- Demo Activities Titles -->
     <string name="title_activity_simple_chrome_tab">Simple Chrome Custom Tab</string>
     <string name="title_activity_customized_chrome_tab">Customized UI Chrome Custom Tab</string>
-    <string name="title_activity_service_connection">Service Connection Activity</string>
 
     <!-- Demo Activities Descriptions -->
     <string name="description_activity_simple_chrome_tab">
@@ -46,16 +42,10 @@
         custom menus to the Toolbar.
     </string>
 
-    <string name="description_activity_service_connection">
-        Connects to the Chrome Custom Tabs Service and warms up Chrome. Allows user to call may
-        launch url before opening the Url.
-    </string>
-
-    <string name="description_activity_notification">
-        Creates a Notification that opens a Chrome Custom Tab when clicked, and returns to the host
-        app when the user hits Back or Up
-    </string>
-    <string name="label_custom_back_button">Custom back button</string>
+    <string name="label_add_action_button">Add Action Button</string>
+    <string name="label_add_menus">Add Menus</string>
     <string name="label_show_title">Show title</string>
+    <string name="label_custom_animation">Custom activity animations</string>
     <string name="label_auto_hide_appbar">Auto-hide AppBar</string>
+    <string name="label_custom_back_button">Custom back button</string>
 </resources>

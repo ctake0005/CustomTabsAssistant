@@ -34,12 +34,22 @@ import android.util.TypedValue;
 
 import org.chromium.customtabsclient.shared.CustomTabsHelper;
 
+/**
+ * Class holding the {@link Intent} and start bundle for a Custom Tabs Activity.
+ *
+ * <p>
+ * <strong>Note:</strong> The constants below are public for the browser implementation's benefit.
+ * You are strongly encouraged to use {@link AssistantIntent.Builder}.</p>
+ */
 public final class AssistantIntent {
     @SuppressWarnings("unused")
     private static final String TAG = AssistantIntent.class.getSimpleName();
     @SuppressWarnings("unused")
     private final AssistantIntent self = this;
 
+    /**
+     * Builder class for {@link AssistantIntent} objects.
+     */
     public static final class Builder {
         private Context mContext;
         private CustomTabsIntent.Builder mBuilder;
@@ -137,7 +147,6 @@ public final class AssistantIntent {
             return this;
         }
 
-        // TODO: 2015/11/22 Menu & ActionButton
         /**
          * Adds a menu item.
          *
@@ -169,7 +178,7 @@ public final class AssistantIntent {
         }
 
         /**
-         * Set the action button.
+         * Sets the action button.
          *
          * @param iconRes The icon drawable ID {@link android.graphics.drawable.Drawable}
          * @param description The description for the button. To be used for accessibility.
@@ -192,7 +201,7 @@ public final class AssistantIntent {
         }
 
         /**
-         * Set the action button for sharing url.
+         * Sets the action button for sharing url.
          *
          * See {@link #setActionButton(int, String, PendingIntent, boolean)}
          */
@@ -229,6 +238,8 @@ public final class AssistantIntent {
         }
 
     }
+
+    /* ----- internals ----- */
 
     private CustomTabsIntent mCustomTabsIntent;
 

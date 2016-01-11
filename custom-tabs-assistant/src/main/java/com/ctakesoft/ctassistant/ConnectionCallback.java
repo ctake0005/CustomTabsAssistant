@@ -16,6 +16,9 @@
 
 package com.ctakesoft.ctassistant;
 
+/**
+ * Connection result callback to CustomTabsService
+ */
 public interface ConnectionCallback {
 
     void onConnected();

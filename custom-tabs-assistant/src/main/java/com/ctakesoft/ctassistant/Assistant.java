@@ -33,6 +33,9 @@ import org.chromium.customtabsclient.shared.CustomTabsHelper;
 import org.chromium.customtabsclient.shared.ServiceConnection;
 import org.chromium.customtabsclient.shared.ServiceConnectionCallback;
 
+/**
+ * Chrome Custom Tabs Assistant main class
+ */
 public final class Assistant implements ServiceConnectionCallback {
     @SuppressWarnings("unused")
     private static final String TAG = Assistant.class.getSimpleName();
@@ -42,7 +45,7 @@ public final class Assistant implements ServiceConnectionCallback {
     private static class NavigationCallback extends CustomTabsCallback {
         @Override
         public void onNavigationEvent(int navigationEvent, Bundle extras) {
-            Log.i(TAG, "onNavigationEvent: Code = " + navigationEvent);
+//            Log.i(TAG, "onNavigationEvent: Code = " + navigationEvent);
         }
     }
 
@@ -54,11 +57,20 @@ public final class Assistant implements ServiceConnectionCallback {
     private CustomTabsServiceConnection mConnection;
     private String mPackageNameToBind;
 
+    /**
+     * constructor
+     *
+     * @param context Activity to start the Chrome Custom Tabs
+     * @param callback It will be set if you want to be notified of the connection result.
+     */
     public Assistant(@NonNull Activity context, @Nullable ConnectionCallback callback) {
         mContext = context;
         mCallback = callback;
     }
 
+    /**
+     * Service connection request for preload
+     */
     public void connect() {
         if (!bindCustomTabsService()) {
             if (mCallback != null) {
@@ -67,6 +79,9 @@ public final class Assistant implements ServiceConnectionCallback {
         }
     }
 
+    /**
+     * Service disconnection request
+     */
     public void disConnect() {
         unbindCustomTabsService();
     }
@@ -83,13 +98,26 @@ public final class Assistant implements ServiceConnectionCallback {
         }
     }
 
+    /**
+     * Creating builder for generating Chrome Custom Tabs.
+     *
+     * @return {@link AssistantIntent.Builder}
+     */
     public AssistantIntent.Builder createIntentBuilder() {
         return new AssistantIntent.Builder(mContext, getSession());
     }
 
+    /**
+     * Launch the Chrome Custom Tabs.
+     *
+     * @param assistantIntent The resulting AssistantIntent
+     * @param urlString url string
+     */
     public void launch(@NonNull AssistantIntent assistantIntent, @NonNull String urlString) {
         openCustomTab((Activity) mContext, assistantIntent, Uri.parse(urlString), new AssistantWebView());
     }
+
+    /* ----- internals ----- */
 
     private boolean bindCustomTabsService() {
         if (mClient != null) {

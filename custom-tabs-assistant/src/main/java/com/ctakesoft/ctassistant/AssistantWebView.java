@@ -24,6 +24,7 @@ import android.net.Uri;
  * A Fallback that opens a WebView when Custom Tabs is not available
  */
 public class AssistantWebView implements Assistant.CustomTabFallback {
+
     @Override
     public void openUri(Activity activity, Uri uri) {
         Intent intent = new Intent(activity, AssistantWebViewActivity.class);

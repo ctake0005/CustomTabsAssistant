@@ -46,6 +46,11 @@ public class DemoListActivity extends AppCompatActivity {
                 SimpleCustomTabActivity.class);
         activityDescList.add(activityDesc);
 
+        activityDesc = createActivityDesc(R.string.title_activity_simple_preload,
+                R.string.description_activity_simple_preload,
+                SimplePreLoadActivity.class);
+        activityDescList.add(activityDesc);
+
         activityDesc = createActivityDesc(R.string.title_activity_customized_chrome_tab,
                 R.string.description_activity_customized_chrome_tab,
                 CustomUIActivity.class);

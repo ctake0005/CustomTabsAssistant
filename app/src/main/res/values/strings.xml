@@ -29,12 +29,18 @@
 
     <!-- Demo Activities Titles -->
     <string name="title_activity_simple_chrome_tab">Simple Chrome Custom Tab</string>
+    <string name="title_activity_simple_preload">PreLoad Chrome Custom Tab</string>
     <string name="title_activity_customized_chrome_tab">Customized UI Chrome Custom Tab</string>
 
     <!-- Demo Activities Descriptions -->
     <string name="description_activity_simple_chrome_tab">
         It is the minimal possible implementation of Chrome Custom Tabs. Doesn’t have any
         customizations, warm-up or pre-fetch. Allows the user to choose which URL to open.
+    </string>
+
+    <string name="description_activity_simple_preload">
+        Connects to the Chrome Custom Tabs Service and warms up Chrome. Allows user to call
+        preload url before opening the Url.
     </string>
 
     <string name="description_activity_customized_chrome_tab">

@@ -5,7 +5,7 @@ Chrome Custom Tabs Assistant
 
 [Apache Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-    Copyright 2015 ctakesoft.com<hal1000@ctakesoft.com>
+    Copyright 2015 ctakesoft.com <hal1000@ctakesoft.com>
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.

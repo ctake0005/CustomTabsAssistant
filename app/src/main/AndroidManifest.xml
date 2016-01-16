@@ -13,8 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<manifest package="com.ctakesoft.demo"
-          xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest
+    package="com.ctakesoft.demo"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -32,41 +33,31 @@
         <activity
             android:name=".SimpleCustomTabActivity"
             android:label="@string/title_activity_simple_chrome_tab"
-            android:parentActivityName=".DemoListActivity" >
+            android:parentActivityName=".DemoListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DemoListActivity" />
+                android:value=".DemoListActivity"/>
         </activity>
         <activity
             android:name=".SimplePreLoadActivity"
             android:label="@string/title_activity_simple_chrome_tab"
-            android:parentActivityName=".DemoListActivity" >
+            android:parentActivityName=".DemoListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DemoListActivity" />
+                android:value=".DemoListActivity"/>
         </activity>
         <activity
             android:name=".CustomUIActivity"
             android:label="@string/title_activity_customized_chrome_tab"
-            android:parentActivityName=".DemoListActivity" >
+            android:parentActivityName=".DemoListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DemoListActivity" />
+                android:value=".DemoListActivity"/>
         </activity>
 
         <activity android:name=".NextActivity">
         </activity>
 
-        <!-- TODO: WebViewActivityのタイトルなど -->
-        <activity
-            android:name="com.ctakesoft.ctassistant.AssistantWebViewActivity"
-            android:label="@string/title_activity_webview"
-            android:parentActivityName=".DemoListActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DemoListActivity" />
-        </activity>
-        <receiver android:name="com.ctakesoft.ctassistant.ShareBroadcastReceiver"/>
     </application>
 
 </manifest>

@@ -13,5 +13,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<manifest package="com.ctakesoft.ctassistant">
+<manifest package="com.ctakesoft.ctassistant"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <application>
+        <activity
+            android:name="com.ctakesoft.ctassistant.AssistantWebViewActivity">
+        </activity>
+        <receiver android:name="com.ctakesoft.ctassistant.ShareBroadcastReceiver"/>
+    </application>
 </manifest>
